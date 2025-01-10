@@ -21,4 +21,15 @@ def create_sats():
         satellite = Actor("satellite")
         satellite.pos = random.randint(40, 750),random.randint(40,750)
         satellites.append(satellite)
-        
+    start_time = time()
+
+def draw():
+    global total_time
+    screen.blit("bg",(0,0))
+    num = 1
+    for satellite in satellites:
+        screen.draw.text(str(num),(satellite.pos[0],satellite.pos[1]+20))
+        satellite.draw()
+        num += 1
+create_sats()
+pgzrun.go()
